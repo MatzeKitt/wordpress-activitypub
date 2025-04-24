@@ -25,6 +25,9 @@ class Multisite_Language_Switcher {
 
 	/**
 	 * Short-circuit saving Multisite Language Switcher data for the Outbox post type.
+	 *
+	 * @param int     $post_id The post id.
+	 * @param WP_Post $post The post object.
 	 */
 	public static function ignore_outbox_post( $post_id, $post ) {
 		if ( Outbox::POST_TYPE === $post->post_type ) {
@@ -34,6 +37,9 @@ class Multisite_Language_Switcher {
 
 	/**
 	 * Remove short-circuit for Multisite Language Switcher data.
+	 *
+	 * @param int     $post_id The post id.
+	 * @param WP_Post $post The post object.
 	 */
 	public static function unignore_outbox_post( $post_id, $post ) {
 		if ( Outbox::POST_TYPE === $post->post_type ) {
